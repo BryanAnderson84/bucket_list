@@ -1,0 +1,17 @@
+<h1>Items for <%= @bucketlist.name %> </h1>
+
+<% if @items.any? %>
+
+  <h4><ul style="list-style: none;">
+    <% @items.each do |item| %>
+      <li>
+        <%= link_to item.description, bucketlist_items_path(@bucketlist, item) %>
+      </li>
+    <% end %>
+  </ul></h4>
+  <% else %>
+    <p>There are no current Items!</p>
+<% end %>
+
+
+<h5><%= link_to "Create a new Item", new_bucketlist_item_path(@bucketlist) %></h5>

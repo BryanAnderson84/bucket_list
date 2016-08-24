@@ -1,0 +1,16 @@
+<h1>"<%= @bucketlist.name %>" </h1>
+
+<h5> <ul style="list-style: none;"> Items:
+      <% @bucketlist.items.each do |item| %>
+          <li> -
+            <%= link_to item.description, bucketlist_item_path(@bucketlist, item) %>
+          </li>
+        <% end %>
+      </ul></h4>
+
+<h5> <%= link_to 'Add New Item', new_bucketlist_item_path(@bucketlist) %> </h5>
+
+<h5>Options:</h5>
+<%= link_to 'All Bucket Lists', bucketlists_path %> |
+<%= link_to 'Edit Bucket Name', edit_bucketlist_path(@bucketlist) %> |
+<%= link_to 'Delete This Bucket List', bucketlist_path, method: :delete, data: {confirm: "Are you sure?"} %>

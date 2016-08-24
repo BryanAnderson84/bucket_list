@@ -1,0 +1,12 @@
+<h1>Edit Item</h1>
+
+<h5>
+<p>Description: <%= @item.description %> </p>
+<p>Category: <%= @item.category %> </p>
+<p>Location: <%= @item.location %> </p>
+<p>Completed?: <%= @item.completed %> </p>
+</h5>
+
+<%= link_to 'Go Back', bucketlist_path(@bucketlist) %> |
+<%= link_to 'Edit This Item', edit_bucketlist_path(@bucketlist) %> |
+<%= link_to 'Delete This Item', bucketlist_item_path, method: :delete, data: {confirm: "Are you sure?"} %>
