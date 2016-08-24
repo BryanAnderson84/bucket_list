@@ -1,4 +1,21 @@
-<h1>Bucket List Central</h1>
+<h1>Welcome to Bucket Hub!</h1>
 
-<%= link_to 'New Bucket List', new_bucketlist_path %> |
-<%= link_to 'View All Bucket Lists', bucketlists_path %>
+<h4 class="card-panel">
+    <i class="small material-icons">info_outline</i>
+      If you're reading this, it means you're alive. Congrats.
+</h4>
+
+<h3>It's high time you did some cool stuff before...</h3>
+
+<div class="row">
+  <div class="col s12 m8">
+    <img class="responsive-img" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/cb6ccd20453009.562eb8565d2fd.jpg" alt="kicking bucket" />
+  </div>
+
+  <div class="col s12 m4">
+    <h5 class="btn-large">
+      <%= link_to '+ Create New List', new_bucketlist_path %> </h5>
+    <h5 class="btn-large"><i class="small material-icons">visibility</i>
+      <%= link_to 'View All Lists', bucketlists_path %> </h5>
+  </div>
+</div>

@@ -7,11 +7,23 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
   </head>
 
   <body>
     <div class="container">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo">Home</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/bucketlists">All Buckets</a></li>
+          </ul>
+        </div>
+      </nav>
+
     <%= yield %>
+
     </div>
   </body>
 </html>

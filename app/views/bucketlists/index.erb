@@ -4,7 +4,7 @@
 
   <h4><ul style="list-style: none;">
     <% @bucketlists.each do |bucketlist| %>
-      <li>
+      <li>-
         <%= link_to bucketlist.name, bucketlist_path(bucketlist) %>
       </li>
     <% end %>
@@ -14,4 +14,4 @@
 <% end %>
 
 
-<h5><%= link_to "Create a Bucket List", new_bucketlist_path %></h5>
+<h5 class="btn"><i class="material-icons">add</i><%= link_to "Create new Bucket List", new_bucketlist_path %></h5>
