@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
-  before_action :item, except: [:index, :new, :create, :search]
-  before_action :bucketlist, except: :search
+  before_action :item, except: [:index, :new, :create]
+  before_action :bucketlist
 
   def index
     @items = @bucketlist.items

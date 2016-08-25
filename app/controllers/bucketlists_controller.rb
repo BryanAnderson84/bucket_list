@@ -1,17 +1,17 @@
 class BucketlistsController < ApplicationController
-
   before_action :bucketlist, except:[:index, :new, :create]
 
   def index
-    @bucketlists = Bucketlist.all
+    @bucketlists = Bucketlist.where(user_id:current_user.id)
   end
-  
+
   def new
     @bucketlist = Bucketlist.new
   end
 
   def create
     @bucketlist = Bucketlist.new(bucketlist_params)
+    @bucketlist.user_id = current_user.id
     if @bucketlist.save
       redirect_to bucketlist_path(@bucketlist)
     else
@@ -38,7 +38,7 @@ class BucketlistsController < ApplicationController
   private
 
   def bucketlist_params
-    params.require(:bucketlist).permit(:name)
+    params.require(:bucketlist).permit(:name, :user_id)
   end
 
   def bucketlist

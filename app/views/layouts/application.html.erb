@@ -8,7 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
   </head>
 
   <body>
@@ -17,11 +17,15 @@
         <div class="nav-wrapper">
           <a href="/" class="brand-logo">Home</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/bucketlists">All Buckets</a></li>
+            <li><a href="/bucketlists">Login / Register</a></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
           </ul>
         </div>
       </nav>
 
+      <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= value %></div>
+          <% end %>
     <%= yield %>
 
     </div>
